@@ -1,5 +1,10 @@
-﻿var gulp = require('gulp');
+﻿// including plugins
+var gulp = require('gulp')
+    , minifyHtml = require("gulp-minify-html");
 
-gulp.task('default', function () {
-    // place code for your default task here
+// task
+gulp.task('minify-html', function () {
+    gulp.src('./Html/*.html') // path to your files
+        .pipe(minifyHtml())
+        .pipe(gulp.dest('path/to/destination'));
 });
